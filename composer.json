@@ -7,6 +7,8 @@
         "fw_micro/core": "^1"
     },
     "autoload": {
-        "src\\": "/"
+        "psr-4": {
+            "src\\": "."
+        }
     }
 }
