@@ -1,0 +1,12 @@
+{
+    "name": "fw_micro/skeleton",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^7.1",
+        "fw_micro/core": "^1"
+    },
+    "autoload": {
+        "src\\": "/"
+    }
+}
