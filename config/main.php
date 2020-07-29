@@ -2,8 +2,8 @@
 
 return [
     'router' => [
-        '<controller>/<action>' => ['action' => 'index'],
-        '' => ['controller' => 'home', 'action' => 'index'],
+        '<action>' => ['controller' => 'home'],
+        '/' => ['controller' => 'home', 'action' => 'index'],
     ],
     'controllers' => [
         'home' => \src\controller\HomeController::class
@@ -15,6 +15,15 @@ return [
             'name' => 'app',
             'file' => __DIR__ . '/../log/' . date('YmdH') . '.app.log',
             'level' => \Monolog\Logger::DEBUG
+        ],
+        [
+            'class' => \fw_micro\core\InitAuth::class,
+            'auth' => \fw_micro\core\auth\Auth::class,
+            'config' => [
+                'table' => 'users',
+                'idIsAI' => false,
+                'isCsrf' => true,
+            ]
         ],
         [
             'class' => \fw_micro\core\InitDB::class,
